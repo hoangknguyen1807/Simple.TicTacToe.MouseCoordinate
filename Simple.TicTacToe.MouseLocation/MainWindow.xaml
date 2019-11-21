@@ -5,10 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Simple.TicTacToe.MouseLocation"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded" 
-        MouseMove="Window_MouseMove"
-        MouseLeftButtonUp="Window_MouseLeftButtonUp">
+        Icon="tictactoe.png"
+        Title="Simple 3x3 TicTacToe" Height="450" Width="380" Loaded="Window_Loaded" 
+        MouseMove="Window_MouseMove" MouseLeftButtonUp="Window_MouseLeftButtonUp"
+        ResizeMode="CanMinimize">
+    <!--H x W : 450x380-->
     <Canvas Name="canvas">
-        <Image x:Name="previewImage" MouseLeftButtonUp="previewImage_MouseLeftButtonUp"/>
+        <Menu>
+            <MenuItem Header="_Save" Click="SaveMenu_Click"/>
+            <MenuItem Header="_Load" Click="LoadMenu_Click"/>
+        </Menu>
+        <Image x:Name="previewImage" MouseLeftButtonUp="previewImage_MouseLeftButtonUp" Stretch="Fill"/>
+        <Label x:Name="labelStatus" Content="" Canvas.Left="10" Canvas.Top="18"
+               FontWeight="DemiBold" BorderBrush="Black"/>
+        <!--<Label x:Name="labelGridSize" Content="Grid Size" Canvas.Left="81" Canvas.Top="18"></Label>
+        <ComboBox x:Name="comboBoxGridSize" Canvas.Left="142" Canvas.Top="22" Width="45" Height="18" Padding="5,1,0,0"/>-->
+        <Button x:Name="btnReset" Content="Reset" Canvas.Left="280" Canvas.Top="22" Width="50"
+                Click="BtnReset_Click" Height="18" Padding="0"/>
+        <Label x:Name="mouseCoordinate" Content="" Canvas.Left="10" Canvas.Top="386" Height="24"/>
     </Canvas>
 </Window>
